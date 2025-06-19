@@ -1,5 +1,6 @@
 on: 
-  pull_request_target
+  pull_request_target:
+    types: [comment, reopened, title, opened]
 
 permissions: write-all
 
