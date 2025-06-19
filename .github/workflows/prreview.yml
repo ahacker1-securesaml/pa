@@ -1,0 +1,10 @@
+on: pull_request_review
+
+permissions: write-all
+
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "PR reviewed"
