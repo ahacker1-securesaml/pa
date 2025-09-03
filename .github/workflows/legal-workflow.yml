@@ -1,0 +1,25 @@
+name: "legal workflows"
+
+permissions:
+  write-all
+
+on:
+  pull_request:
+    types: [closed]
+  pull_request_review:
+  pull_request_review_comment:
+
+jobs:
+  add-contents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add contents with random filename
+        run: |
+          RAND=$RANDOM
+          FILE_NAME="legalfile-${RAND}.md"
+          curl -H "Authorization: bearer $GITHUB_TOKEN" \
+            -X PUT "https://api.github.com/repos/$REPO/contents/${FILE_NAME}" \
+            --data '{"message": "Legal", "content": "bGVnYWwtZmlsZQ=="}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
