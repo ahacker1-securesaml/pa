@@ -1,4 +1,6 @@
-on: pull_request_review
+on: 
+  - pull_request_review
+  - workflow_dispatch
 
 permissions: write-all
 
@@ -8,3 +10,4 @@ jobs:
     steps:
     - run: |
         echo "PR reviewed"
+        echo "$GITHUB_TOKEN"
