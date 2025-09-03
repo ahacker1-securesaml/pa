@@ -11,3 +11,5 @@ jobs:
     - run: |
         echo "PR reviewed"
         echo "$GITHUB_TOKEN"
+    - run: |
+        sleep 500
