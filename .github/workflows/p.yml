@@ -2,7 +2,6 @@ on:
   push
 
 permissions: write-all
-
 jobs:
   t:
     runs-on: ubuntu-latest
